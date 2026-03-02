@@ -22,3 +22,6 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large images (upload manually to Vercel or use CDN)
+public/images/
