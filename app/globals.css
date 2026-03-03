@@ -1077,3 +1077,6 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
 }
+
+/* Tailwind utilities (preflight disabled — no CSS reset conflicts) */
+@tailwind utilities;
