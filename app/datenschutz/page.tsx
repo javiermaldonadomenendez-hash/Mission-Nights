@@ -98,7 +98,60 @@ export default function Datenschutz() {
             </div>
 
             <div className="legal-section">
-              <h2>4. Cookies</h2>
+              <h2>4. Ticketverkauf über Eventbrite</h2>
+              <p>
+                Für den Verkauf von Tickets zu unseren Veranstaltungen nutzen
+                wir den Dienst <strong>Eventbrite</strong>. Anbieter ist die
+                Eventbrite, Inc., 155 5th Street, Floor 7, San Francisco,
+                CA 94103, USA (für Nutzer außerhalb des EWR) bzw.
+                Eventbrite Ltd., 2nd Floor, River House, 48–60 High Street,
+                Kingston upon Thames, KT1 1HN, Großbritannien (für Nutzer
+                im EWR).
+              </p>
+              <p>
+                Wenn du auf unserer Website auf einen Ticket-Link klickst,
+                wirst du auf die Plattform von Eventbrite weitergeleitet.
+                Ab diesem Zeitpunkt gilt die Datenschutzrichtlinie von
+                Eventbrite. Wir haben auf die dort stattfindende
+                Datenverarbeitung keinen Einfluss.
+              </p>
+              <p>
+                Beim Ticketkauf über Eventbrite werden folgende Daten von
+                Eventbrite verarbeitet:
+              </p>
+              <ul>
+                <li>Name und E-Mail-Adresse</li>
+                <li>Rechnungs- und Zahlungsdaten</li>
+                <li>IP-Adresse und Geräteinformationen</li>
+                <li>Angaben zur gebuchten Veranstaltung</li>
+              </ul>
+              <p>
+                Eventbrite übermittelt uns nach einem Kauf folgende Daten zur
+                Durchführung der Veranstaltung: Name, E-Mail-Adresse sowie
+                den Ticket-Status.
+              </p>
+              <p>
+                Rechtsgrundlage für die Weiterleitung und Datenübermittlung:
+                Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). Da Eventbrite
+                ein US-amerikanisches Unternehmen ist, kann eine Datenübertragung
+                in die USA stattfinden. Eventbrite stützt sich dabei auf
+                Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c
+                DSGVO) als geeignete Garantie.
+              </p>
+              <p>
+                Datenschutzrichtlinie von Eventbrite:{' '}
+                <a
+                  href="https://www.eventbrite.de/support/articles/de/Troubleshooting/datenschutzrichtlinie-von-eventbrite"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  eventbrite.de – Datenschutzrichtlinie
+                </a>
+              </p>
+            </div>
+
+            <div className="legal-section">
+              <h2>5. Cookies</h2>
               <p>
                 Unsere Website verwendet Cookies. Cookies sind kleine
                 Textdateien, die auf deinem Endgerät gespeichert werden und
@@ -125,7 +178,7 @@ export default function Datenschutz() {
             </div>
 
             <div className="legal-section">
-              <h2>5. Kontaktaufnahme per E-Mail</h2>
+              <h2>6. Kontaktaufnahme per E-Mail</h2>
               <p>
                 Wenn du uns per E-Mail kontaktierst, werden deine übermittelten
                 Daten (E-Mail-Adresse, Name sowie ggf. weitere Angaben) zum
@@ -145,7 +198,7 @@ export default function Datenschutz() {
             </div>
 
             <div className="legal-section">
-              <h2>6. Veranstaltungsanmeldung</h2>
+              <h2>7. Veranstaltungsanmeldung</h2>
               <p>
                 Wenn du dich zu einer Veranstaltung anmeldest, verarbeiten wir
                 folgende Daten:
@@ -169,7 +222,7 @@ export default function Datenschutz() {
             </div>
 
             <div className="legal-section">
-              <h2>7. Instagram</h2>
+              <h2>8. Instagram</h2>
               <p>
                 Auf unserer Website sind Links zum Instagram-Profil von Mission
                 Nights eingebunden. Beim Anklicken dieser Links wirst du auf
@@ -191,7 +244,7 @@ export default function Datenschutz() {
             </div>
 
             <div className="legal-section">
-              <h2>8. Weitergabe von Daten an Dritte</h2>
+              <h2>9. Weitergabe von Daten an Dritte</h2>
               <p>
                 Eine Weitergabe deiner personenbezogenen Daten an Dritte
                 erfolgt grundsätzlich nicht, außer:
@@ -213,7 +266,7 @@ export default function Datenschutz() {
             </div>
 
             <div className="legal-section">
-              <h2>9. Speicherdauer</h2>
+              <h2>10. Speicherdauer</h2>
               <p>
                 Personenbezogene Daten werden nur so lange gespeichert, wie
                 dies für den jeweiligen Verarbeitungszweck erforderlich ist.
@@ -224,7 +277,7 @@ export default function Datenschutz() {
             </div>
 
             <div className="legal-section">
-              <h2>10. Betroffenenrechte</h2>
+              <h2>11. Betroffenenrechte</h2>
               <p>
                 Dir stehen gegenüber uns folgende Rechte hinsichtlich deiner
                 personenbezogenen Daten zu:
@@ -276,7 +329,7 @@ export default function Datenschutz() {
             </div>
 
             <div className="legal-section">
-              <h2>11. Beschwerderecht bei der Aufsichtsbehörde</h2>
+              <h2>12. Beschwerderecht bei der Aufsichtsbehörde</h2>
               <p>
                 Du hast das Recht, dich jederzeit bei einer
                 Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO).
@@ -305,7 +358,7 @@ export default function Datenschutz() {
             </div>
 
             <div className="legal-section">
-              <h2>12. Datensicherheit</h2>
+              <h2>13. Datensicherheit</h2>
               <p>
                 Diese Website nutzt aus Sicherheitsgründen und zum Schutz der
                 Übertragung vertraulicher Inhalte eine SSL-/TLS-Verschlüsselung.
@@ -316,7 +369,7 @@ export default function Datenschutz() {
             </div>
 
             <div className="legal-section">
-              <h2>13. Aktualität dieser Datenschutzerklärung</h2>
+              <h2>14. Aktualität dieser Datenschutzerklärung</h2>
               <p>
                 Diese Datenschutzerklärung hat den Stand März 2026. Wir behalten
                 uns vor, sie bei Bedarf zu aktualisieren, um sie stets den

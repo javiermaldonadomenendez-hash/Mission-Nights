@@ -53,23 +53,35 @@ export default function AGB() {
             </div>
 
             <div className="legal-section">
-              <h2>3. Anmeldung und Vertragsschluss</h2>
+              <h2>3. Anmeldung, Ticketkauf und Vertragsschluss</h2>
               <p>
-                Die Anmeldung zu einer Veranstaltung erfolgt über die Website
-                mission-nights.de oder über sonstige vom Veranstalter
-                bereitgestellte Anmeldemöglichkeiten. Mit dem Absenden der
-                Anmeldung gibst du ein verbindliches Angebot auf Abschluss
-                eines Teilnahmevertrags ab.
+                Die Anmeldung zu kostenpflichtigen Veranstaltungen erfolgt
+                über die Ticketplattform <strong>Eventbrite</strong>. Du wirst
+                dazu von unserer Website auf die Plattform von Eventbrite
+                weitergeleitet. Der Kaufvertrag für das Ticket kommt zwischen
+                dir und dem Veranstalter (Mission Nights) über die
+                Eventbrite-Plattform zustande. Für den Kaufprozess selbst
+                gelten zusätzlich die Nutzungsbedingungen von Eventbrite:{' '}
+                <a
+                  href="https://www.eventbrite.de/support/articles/de/Troubleshooting/nutzungsbedingungen-von-eventbrite"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  eventbrite.de – Nutzungsbedingungen
+                </a>
+              </p>
+              <p>
+                Die Anmeldung zu kostenfreien Veranstaltungen kann direkt über
+                die Website mission-nights.de oder sonstige bereitgestellte
+                Kanäle erfolgen. Mit dem Absenden der Anmeldung gibst du ein
+                verbindliches Angebot auf Abschluss eines Teilnahmevertrags ab.
               </p>
               <p>
                 Der Vertrag kommt zustande, wenn wir deine Anmeldung
-                ausdrücklich bestätigen (z. B. per E-Mail) oder indem wir die
-                Leistung erbringen. Wir sind nicht verpflichtet, eine Anmeldung
+                ausdrücklich bestätigen (z. B. per Bestätigungs-E-Mail von
+                Eventbrite oder durch uns) oder indem wir die Leistung
+                erbringen. Wir sind nicht verpflichtet, eine Anmeldung
                 anzunehmen.
-              </p>
-              <p>
-                Die Bestätigungsmail stellt noch keine Annahme des Angebots
-                dar, sofern diese nur den Eingang der Anfrage bestätigt.
               </p>
             </div>
 
@@ -79,13 +91,15 @@ export default function AGB() {
                 Die Höhe einer etwaigen Teilnahmegebühr wird für jede
                 Veranstaltung separat ausgewiesen. Alle Preise sind
                 Endpreise in Euro. Sofern Umsatzsteuer anfällt, wird diese
-                ausgewiesen.
+                ausgewiesen. Eventbrite kann zusätzlich Servicegebühren
+                erheben; diese werden im Buchungsprozess auf der
+                Eventbrite-Plattform ausgewiesen.
               </p>
               <p>
-                Sofern eine Zahlung erforderlich ist, ist diese vor oder bei
-                Beginn der Veranstaltung zu leisten, soweit keine abweichende
-                Regelung getroffen wird. Zahlungsmodalitäten werden bei der
-                jeweiligen Veranstaltungsankündigung kommuniziert.
+                Die Zahlung erfolgt über die von Eventbrite angebotenen
+                Zahlungsmethoden. Die Abwicklung der Zahlung liegt in der
+                Verantwortung von Eventbrite gemäß dessen
+                Nutzungsbedingungen.
               </p>
             </div>
 
