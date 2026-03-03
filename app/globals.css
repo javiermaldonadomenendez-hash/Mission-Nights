@@ -706,7 +706,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 .vd-image-full {
   position: relative;
-  height: clamp(480px, 70vh, 780px);
+  height: clamp(520px, 75vh, 860px);
   overflow: hidden;
 }
 
@@ -715,9 +715,9 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   inset: 0;
   background: linear-gradient(
     105deg,
-    rgba(10, 10, 10, 0.82) 0%,
-    rgba(10, 10, 10, 0.55) 50%,
-    rgba(10, 10, 10, 0.15) 100%
+    rgba(10, 10, 10, 0.85) 0%,
+    rgba(10, 10, 10, 0.45) 45%,
+    rgba(10, 10, 10, 0.05) 100%
   );
   z-index: 1;
 }

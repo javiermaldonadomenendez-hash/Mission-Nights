@@ -9,7 +9,7 @@ export default function VisionDinner() {
           alt="Vision Dinner – Mission Nights Special Event"
           fill
           sizes="100vw"
-          style={{ objectFit: 'cover', objectPosition: 'center top' }}
+          style={{ objectFit: 'cover', objectPosition: 'center center' }}
           priority={false}
         />
         <div className="vd-overlay" />
