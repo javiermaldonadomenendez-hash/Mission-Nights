@@ -101,7 +101,7 @@ export default function NextEvent() {
             </div>
 
             <a
-              href="EVENTBRITE_LINK_HIER_EINFÜGEN"
+              href="https://www.eventbrite.de/e/gesundheit-im-unternehmertum-tickets-1984383838479?aff=oddtdtcreator"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-dark btn-md"
