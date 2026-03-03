@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function NextEvent() {
   return (
     <section className="next-event" id="event">
@@ -11,6 +13,13 @@ export default function NextEvent() {
         <div className="event-card reveal">
           {/* Visual side */}
           <div className="event-visual">
+            <Image
+              src="https://assets.mission-nights.de/mission-nights.timscholten.webp"
+              alt="Tim Scholten – Personaltrainer"
+              fill
+              sizes="(max-width: 768px) 100vw, 400px"
+              style={{ objectFit: 'cover', objectPosition: 'center top', zIndex: 0 }}
+            />
             <div className="ev-date">
               <span className="ev-day">31</span>
               <span className="ev-month">März 2026</span>

@@ -5,7 +5,6 @@ export default function CTA() {
         <span className="label reveal">Werde Teil der Bewegung</span>
         <h2 className="reveal">
           Werde Teil der
-          <br />
           <em>Mission Nights.</em>
         </h2>
         <p className="reveal d1">

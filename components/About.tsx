@@ -45,7 +45,7 @@ export default function About() {
 
           <div className="about-image reveal d2">
             <Image
-              src="https://assets.mission-nights.de/IMG_4050.jpeg"
+              src="https://assets.mission-nights.de/mission-nights1.webp"
               alt="Mission Nights Atmosphäre"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

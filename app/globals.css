@@ -504,10 +504,11 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 25% 80%, rgba(255,255,255,0.055) 0%, transparent 55%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: 1;
 }
 
-.ev-date { position: relative; z-index: 1; }
+.ev-date { position: relative; z-index: 2; }
 .ev-day {
   display: block;
   font-size: clamp(3.5rem, 7vw, 6rem);
@@ -532,6 +533,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   font-size: 0.75rem;
   padding: 7px 14px;
   border-radius: 100px;
+  position: relative;
+  z-index: 2;
   letter-spacing: 0.04em;
   position: relative;
   z-index: 1;
@@ -855,6 +858,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   margin-bottom: 22px;
 }
 .cta-section h2 em {
+  display: block;
+  margin-top: 50px;
   font-family: var(--font-montserrat), sans-serif;
   font-style: normal;
   font-weight: 800;
