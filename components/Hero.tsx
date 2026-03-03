@@ -1,7 +1,16 @@
+import { Component as EtheralShadow } from '@/components/ui/etheral-shadow'
+
 export default function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-bg">
+        <EtheralShadow
+          color="rgba(255, 255, 255, 0.13)"
+          animation={{ scale: 80, speed: 60 }}
+          noise={{ opacity: 0.4, scale: 1.2 }}
+          sizing="fill"
+          style={{ position: 'absolute', inset: 0 }}
+        />
         <div className="hero-cloud c1" />
         <div className="hero-cloud c2" />
         <div className="hero-cloud c3" />
