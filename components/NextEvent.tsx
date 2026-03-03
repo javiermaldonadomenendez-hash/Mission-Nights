@@ -14,7 +14,7 @@ export default function NextEvent() {
           {/* Visual side */}
           <div className="event-visual">
             <Image
-              src="https://assets.mission-nights.de/mission-nights.timscholten.webp"
+              src="https://assets.mission-nights.de/kunden/mission-nights/images/mission-nights.timscholten.webp"
               alt="Tim Scholten – Personaltrainer"
               fill
               sizes="(max-width: 768px) 100vw, 400px"

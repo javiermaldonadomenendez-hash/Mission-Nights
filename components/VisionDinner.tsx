@@ -5,7 +5,7 @@ export default function VisionDinner() {
     <section className="vision-dinner">
       <div className="vd-image-full">
         <Image
-          src="https://assets.mission-nights.de/mission-nightsvisiondinner.webp"
+          src="https://assets.mission-nights.de/kunden/mission-nights/images/mission-nightsvisiondinner.webp"
           alt="Vision Dinner – Mission Nights Special Event"
           fill
           sizes="100vw"

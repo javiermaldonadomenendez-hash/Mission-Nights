@@ -2,22 +2,22 @@ import Image from 'next/image'
 
 const images = [
   {
-    src: 'https://assets.mission-nights.de/mission-nights2.webp',
+    src: 'https://assets.mission-nights.de/kunden/mission-nights/images/mission-nights2.webp',
     alt: 'Mission Nights Event',
     objectPosition: 'center center',
   },
   {
-    src: 'https://assets.mission-nights.de/mission-nights3.webp',
+    src: 'https://assets.mission-nights.de/kunden/mission-nights/images/mission-nights3.webp',
     alt: 'Networking',
     objectPosition: 'center top',
   },
   {
-    src: 'https://assets.mission-nights.de/mission-nights4.webp',
+    src: 'https://assets.mission-nights.de/kunden/mission-nights/images/mission-nights4.webp',
     alt: 'Abendatmosphäre',
     objectPosition: 'center top',
   },
   {
-    src: 'https://assets.mission-nights.de/mission-nights5.webp',
+    src: 'https://assets.mission-nights.de/kunden/mission-nights/images/mission-nights5.webp',
     alt: 'Talk & Inspiration',
     objectPosition: 'center top',
   },
