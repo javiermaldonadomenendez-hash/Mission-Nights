@@ -8,8 +8,7 @@ export default function Hero() {
         <div className="hero-cloud c4" />
       </div>
       <div className="hero-inner reveal">
-        <div className="hero-eyebrow">seit 2025</div>
-        <h1 className="hero-title">
+<h1 className="hero-title">
           Mission
           <br />
           Nights

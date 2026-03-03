@@ -3,22 +3,22 @@ import Image from 'next/image'
 // A7407693.jpg (Koch) moved to VisionDinner section
 const images = [
   {
-    src: '/images/A7R04923.jpg',
+    src: 'https://assets.mission-nights.de/A7R04923.jpg',
     alt: 'Mission Nights Event',
     objectPosition: 'center center',
   },
   {
-    src: '/images/IMG_4053.jpeg',
+    src: 'https://assets.mission-nights.de/IMG_4053.jpeg',
     alt: 'Networking',
     objectPosition: 'center top',
   },
   {
-    src: '/images/IMG_3993.jpeg',
+    src: 'https://assets.mission-nights.de/IMG_3993.jpeg',
     alt: 'Abendatmosphäre',
     objectPosition: 'center top',
   },
   {
-    src: '/images/IMG_4156.jpeg',
+    src: 'https://assets.mission-nights.de/IMG_4156.jpeg',
     alt: 'Talk & Inspiration',
     objectPosition: 'center top',
   },
