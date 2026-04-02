@@ -21,8 +21,8 @@ export default function Home() {
       <NextEvent />
       <Experience />
       <Gallery />
-      <VisionDinner />
       <Philosophy />
+      <VisionDinner />
       <Reviews />
       <CTA />
       <Footer />
