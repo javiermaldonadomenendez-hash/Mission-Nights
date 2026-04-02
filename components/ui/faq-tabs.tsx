@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
 import { Plus } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -25,10 +24,8 @@ export const FAQ = ({
 
   return (
     <section
-      className={cn(
-        'relative overflow-hidden bg-background px-4 py-12 text-foreground',
-        className
-      )}
+      className={cn('relative overflow-hidden px-4 py-12', className)}
+      style={{ background: 'var(--white)', color: 'var(--black)' }}
       {...props}
     >
       <FAQHeader title={title} subtitle={subtitle} />
@@ -43,12 +40,11 @@ export const FAQ = ({
 }
 
 const FAQHeader = ({ title, subtitle }: { title: string; subtitle: string }) => (
-  <div className="relative z-10 flex flex-col items-center justify-center">
-    <span className="mb-8 bg-gradient-to-r from-primary to-primary/60 bg-clip-text font-medium text-transparent">
-      {subtitle}
-    </span>
-    <h2 className="mb-8 text-5xl font-bold">{title}</h2>
-    <span className="absolute -top-[350px] left-[50%] z-0 h-[500px] w-[600px] -translate-x-[50%] rounded-full bg-gradient-to-r from-primary/10 to-primary/5 blur-3xl" />
+  <div className="relative z-10 flex flex-col items-center justify-center mb-8">
+    <span className="label mb-4">{subtitle}</span>
+    <h2 style={{ fontSize: 'clamp(2rem, 4.5vw, 3.25rem)', fontWeight: 400, letterSpacing: '-0.035em' }}>
+      {title}
+    </h2>
   </div>
 )
 
@@ -61,30 +57,24 @@ const FAQTabs = ({
   selected: string
   setSelected: (key: string) => void
 }) => (
-  <div className="relative z-10 flex flex-wrap items-center justify-center gap-4">
+  <div className="relative z-10 flex flex-wrap items-center justify-center gap-3 mb-10">
     {Object.entries(categories).map(([key, label]) => (
       <button
         key={key}
         onClick={() => setSelected(key)}
-        className={cn(
-          'relative overflow-hidden whitespace-nowrap rounded-md border px-3 py-1.5 text-sm font-medium transition-colors duration-500',
-          selected === key
-            ? 'border-primary text-background'
-            : 'border-border bg-transparent text-muted-foreground hover:text-foreground'
-        )}
+        style={{
+          padding: '8px 20px',
+          borderRadius: '100px',
+          border: `1px solid ${selected === key ? 'var(--black)' : 'var(--gray-200)'}`,
+          background: selected === key ? 'var(--black)' : 'transparent',
+          color: selected === key ? 'var(--white)' : 'var(--gray-500)',
+          fontSize: '0.875rem',
+          fontWeight: 500,
+          cursor: 'pointer',
+          transition: 'all 0.2s',
+        }}
       >
-        <span className="relative z-10">{label}</span>
-        <AnimatePresence>
-          {selected === key && (
-            <motion.span
-              initial={{ y: '100%' }}
-              animate={{ y: '0%' }}
-              exit={{ y: '100%' }}
-              transition={{ duration: 0.5, ease: 'backIn' }}
-              className="absolute inset-0 z-0 bg-gradient-to-r from-primary to-primary/80"
-            />
-          )}
-        </AnimatePresence>
+        {label}
       </button>
     ))}
   </div>
@@ -97,26 +87,17 @@ const FAQList = ({
   faqData: Record<string, { question: string; answer: string }[]>
   selected: string
 }) => (
-  <div className="mx-auto mt-12 max-w-3xl">
-    <AnimatePresence mode="wait">
-      {Object.entries(faqData).map(([category, questions]) => {
-        if (selected !== category) return null
-        return (
-          <motion.div
-            key={category}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, ease: 'backIn' }}
-            className="space-y-4"
-          >
-            {questions.map((faq, index) => (
-              <FAQItem key={index} {...faq} />
-            ))}
-          </motion.div>
-        )
-      })}
-    </AnimatePresence>
+  <div className="mx-auto mt-4" style={{ maxWidth: '780px' }}>
+    {Object.entries(faqData).map(([category, questions]) => {
+      if (selected !== category) return null
+      return (
+        <div key={category} className="space-y-0">
+          {questions.map((faq, index) => (
+            <FAQItem key={index} {...faq} />
+          ))}
+        </div>
+      )
+    })}
   </div>
 )
 
@@ -124,51 +105,50 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <motion.div
-      animate={isOpen ? 'open' : 'closed'}
-      className={cn(
-        'rounded-xl border transition-colors',
-        isOpen ? 'bg-muted/50' : 'bg-card'
-      )}
+    <div
+      style={{
+        borderTop: '1px solid var(--gray-200)',
+      }}
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between gap-4 p-4 text-left"
+        className="flex w-full items-center justify-between gap-4"
+        style={{
+          padding: 'clamp(18px, 2.5vw, 26px) 0',
+          textAlign: 'left',
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          color: 'var(--black)',
+        }}
       >
-        <span
-          className={cn(
-            'text-lg font-medium transition-colors',
-            isOpen ? 'text-foreground' : 'text-muted-foreground'
-          )}
-        >
+        <span style={{ fontSize: 'clamp(1rem, 1.8vw, 1.125rem)', fontWeight: 400 }}>
           {question}
         </span>
-        <motion.span
-          variants={{
-            open: { rotate: '45deg' },
-            closed: { rotate: '0deg' },
+        <Plus
+          style={{
+            flexShrink: 0,
+            width: 20,
+            height: 20,
+            color: 'var(--gray-400)',
+            transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
+            transition: 'transform 0.2s',
           }}
-          transition={{ duration: 0.2 }}
-        >
-          <Plus
-            className={cn(
-              'h-5 w-5 transition-colors',
-              isOpen ? 'text-foreground' : 'text-muted-foreground'
-            )}
-          />
-        </motion.span>
+        />
       </button>
-      <motion.div
-        initial={false}
-        animate={{
-          height: isOpen ? 'auto' : '0px',
-          marginBottom: isOpen ? '16px' : '0px',
-        }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className="overflow-hidden px-4"
-      >
-        <p className="text-muted-foreground">{answer}</p>
-      </motion.div>
-    </motion.div>
+      {isOpen && (
+        <p
+          style={{
+            fontSize: '1rem',
+            color: 'var(--gray-500)',
+            lineHeight: 1.7,
+            paddingBottom: 'clamp(18px, 2.5vw, 26px)',
+            maxWidth: '660px',
+          }}
+        >
+          {answer}
+        </p>
+      )}
+    </div>
   )
 }

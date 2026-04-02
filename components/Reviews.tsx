@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { TestimonialsColumn, type Testimonial } from '@/components/ui/testimonials-columns-1'
 
 const testimonials: Testimonial[] = [
@@ -74,16 +73,10 @@ export default function Reviews() {
   return (
     <section className="reviews" id="reviews">
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true }}
-          className="section-header"
-        >
+        <div className="section-header reveal">
           <span className="label">Stimmen</span>
           <h2>Was andere sagen.</h2>
-        </motion.div>
+        </div>
 
         <div className="flex justify-center gap-6 mt-10 overflow-hidden" style={{
           maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
