@@ -12,7 +12,12 @@ export default function CTA() {
           <br />
           Der nächste Abend gehört dir.
         </p>
-        <a href="#event" className="btn btn-dark btn-lg reveal d2">
+        <a
+          href="https://www.eventbrite.de/e/1986539917369?aff=oddtdtcreator"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-dark btn-lg reveal d2"
+        >
           Platz sichern
         </a>
         <span className="cta-note reveal d3">
