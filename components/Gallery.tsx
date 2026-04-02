@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState, useEffect, useCallback } from 'react'
+import { InfiniteSlider } from '@/components/ui/infinite-slider-horizontal'
 
 const BASE = 'https://assets.mission-nights.de/kunden/mission-nights/images'
 
@@ -21,37 +21,10 @@ const images = [
   { src: `${BASE}/mission-nights5.webp`,  alt: 'Mission Nights Talk & Inspiration' },
 ]
 
+const firstRow = images.slice(0, 7)
+const secondRow = images.slice(6)
+
 export default function Gallery() {
-  const [current, setCurrent] = useState(0)
-  const [paused, setPaused] = useState(false)
-  const [lightbox, setLightbox] = useState(false)
-
-  const next = useCallback(() => {
-    setCurrent(i => (i + 1) % images.length)
-  }, [])
-
-  const prev = () => {
-    setCurrent(i => (i - 1 + images.length) % images.length)
-  }
-
-  useEffect(() => {
-    if (paused) return
-    const id = setInterval(next, 5000)
-    return () => clearInterval(id)
-  }, [paused, next])
-
-  // Schließen mit Escape
-  useEffect(() => {
-    if (!lightbox) return
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setLightbox(false)
-      if (e.key === 'ArrowRight') next()
-      if (e.key === 'ArrowLeft') prev()
-    }
-    window.addEventListener('keydown', handler)
-    return () => window.removeEventListener('keydown', handler)
-  }, [lightbox, next])
-
   return (
     <section className="gallery" id="gallery">
       <div className="container">
@@ -65,88 +38,35 @@ export default function Gallery() {
         </div>
       </div>
 
-      <div
-        className="slideshow"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-      >
-        <div
-          className="slideshow-track"
-          onClick={() => setLightbox(true)}
-          style={{ cursor: 'zoom-in' }}
-        >
-          {images.map((img, i) => (
-            <div
-              key={img.src}
-              className={`slide${i === current ? ' slide--active' : ''}`}
-              aria-hidden={i !== current}
-            >
+      <div className="gallery-slider-wrap">
+        <InfiniteSlider gap={12} duration={35} durationOnHover={80}>
+          {firstRow.map((img) => (
+            <div key={img.src} className="gallery-slide-item">
               <Image
                 src={img.src}
                 alt={img.alt}
-                fill
-                sizes="100vw"
-                style={{ objectFit: 'contain', objectPosition: 'center' }}
-                priority={i === 0}
+                width={480}
+                height={320}
+                className="gallery-slide-img"
               />
             </div>
           ))}
-        </div>
+        </InfiniteSlider>
 
-        <button className="slide-btn slide-btn--prev" onClick={prev} aria-label="Vorheriges Bild">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-        <button className="slide-btn slide-btn--next" onClick={next} aria-label="Nächstes Bild">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-
-        <div className="slide-dots">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              className={`slide-dot${i === current ? ' slide-dot--active' : ''}`}
-              onClick={() => setCurrent(i)}
-              aria-label={`Bild ${i + 1}`}
-            />
+        <InfiniteSlider gap={12} duration={40} durationOnHover={80} reverse>
+          {secondRow.map((img) => (
+            <div key={img.src} className="gallery-slide-item">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={480}
+                height={320}
+                className="gallery-slide-img"
+              />
+            </div>
           ))}
-        </div>
+        </InfiniteSlider>
       </div>
-
-      {/* Lightbox */}
-      {lightbox && (
-        <div className="lightbox" onClick={() => setLightbox(false)}>
-          <button className="lightbox-close" onClick={() => setLightbox(false)} aria-label="Schließen">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
-          <button className="lightbox-prev" onClick={e => { e.stopPropagation(); prev() }} aria-label="Vorheriges Bild">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-          <div className="lightbox-img" onClick={e => e.stopPropagation()}>
-            <Image
-              src={images[current].src}
-              alt={images[current].alt}
-              fill
-              sizes="100vw"
-              style={{ objectFit: 'contain' }}
-              priority
-            />
-          </div>
-          <button className="lightbox-next" onClick={e => { e.stopPropagation(); next() }} aria-label="Nächstes Bild">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
-          <div className="lightbox-counter">{current + 1} / {images.length}</div>
-        </div>
-      )}
     </section>
   )
 }
