@@ -16,7 +16,7 @@ export default function CTA() {
           Platz sichern
         </a>
         <span className="cta-note reveal d3">
-          Nächste Mission Night · 31. März 2026 · Haus Ripshorst, Oberhausen
+          Nächste Mission Night · 21. April 2026 · Restaurant Thema, Mülheim an der Ruhr
         </span>
       </div>
     </section>
