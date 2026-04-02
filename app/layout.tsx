@@ -27,10 +27,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   icons: {
     icon: [
-      { url: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    shortcut: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon.svg',
-    apple: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
   openGraph: {
     type: 'website',
@@ -66,7 +66,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Mission Nights',
   url: 'https://www.mission-nights.de',
-  logo: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon.svg',
+  logo: 'https://www.mission-nights.de/favicon.svg',
   description:
     'Mission Nights veranstaltet exklusive Networking-Events für Unternehmer, Gründer und ambitionierte Menschen in NRW.',
   address: {
