@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { FAQ as FAQTabs } from '@/components/ui/faq-tabs'
 import { FAQSchema, faqItems } from './FAQSchema'
 
@@ -58,6 +59,16 @@ export default function FAQ() {
         categories={categories}
         faqData={faqData}
         className="py-[clamp(80px,11vw,144px)]"
+        style={{
+          '--background':         '#0a0a0a',
+          '--foreground':         '#ffffff',
+          '--primary':            '#ffffff',
+          '--primary-foreground': '#0a0a0a',
+          '--muted':              '#1a1a1a',
+          '--muted-foreground':   '#a3a3a3',
+          '--card':               '#111111',
+          '--border':             '#2a2a2a',
+        } as React.CSSProperties}
       />
     </section>
   )
