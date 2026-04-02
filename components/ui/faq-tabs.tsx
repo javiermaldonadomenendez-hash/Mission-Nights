@@ -10,6 +10,7 @@ export const FAQ = ({
   categories,
   faqData,
   className,
+  style: styleProp,
   ...props
 }: {
   title?: string
@@ -17,6 +18,7 @@ export const FAQ = ({
   categories: Record<string, string>
   faqData: Record<string, { question: string; answer: string }[]>
   className?: string
+  style?: React.CSSProperties
   [key: string]: unknown
 }) => {
   const categoryKeys = Object.keys(categories)
@@ -25,7 +27,7 @@ export const FAQ = ({
   return (
     <section
       className={cn('relative overflow-hidden px-4 py-12', className)}
-      style={{ background: 'var(--background)', color: 'var(--foreground)' }}
+      style={{ background: 'var(--background)', color: 'var(--foreground)', ...styleProp }}
       {...props}
     >
       <FAQHeader title={title} subtitle={subtitle} />
