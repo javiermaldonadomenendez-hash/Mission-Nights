@@ -24,6 +24,7 @@ const images = [
 export default function Gallery() {
   const [current, setCurrent] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [lightbox, setLightbox] = useState(false)
 
   const next = useCallback(() => {
     setCurrent(i => (i + 1) % images.length)
@@ -38,6 +39,18 @@ export default function Gallery() {
     const id = setInterval(next, 5000)
     return () => clearInterval(id)
   }, [paused, next])
+
+  // Schließen mit Escape
+  useEffect(() => {
+    if (!lightbox) return
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(false)
+      if (e.key === 'ArrowRight') next()
+      if (e.key === 'ArrowLeft') prev()
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [lightbox, next])
 
   return (
     <section className="gallery" id="gallery">
@@ -57,7 +70,11 @@ export default function Gallery() {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <div className="slideshow-track">
+        <div
+          className="slideshow-track"
+          onClick={() => setLightbox(true)}
+          style={{ cursor: 'zoom-in' }}
+        >
           {images.map((img, i) => (
             <div
               key={img.src}
@@ -76,7 +93,6 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Prev / Next */}
         <button className="slide-btn slide-btn--prev" onClick={prev} aria-label="Vorheriges Bild">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="15 18 9 12 15 6" />
@@ -88,7 +104,6 @@ export default function Gallery() {
           </svg>
         </button>
 
-        {/* Dots */}
         <div className="slide-dots">
           {images.map((_, i) => (
             <button
@@ -100,6 +115,38 @@ export default function Gallery() {
           ))}
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div className="lightbox" onClick={() => setLightbox(false)}>
+          <button className="lightbox-close" onClick={() => setLightbox(false)} aria-label="Schließen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <button className="lightbox-prev" onClick={e => { e.stopPropagation(); prev() }} aria-label="Vorheriges Bild">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <div className="lightbox-img" onClick={e => e.stopPropagation()}>
+            <Image
+              src={images[current].src}
+              alt={images[current].alt}
+              fill
+              sizes="100vw"
+              style={{ objectFit: 'contain' }}
+              priority
+            />
+          </div>
+          <button className="lightbox-next" onClick={e => { e.stopPropagation(); next() }} aria-label="Nächstes Bild">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+          <div className="lightbox-counter">{current + 1} / {images.length}</div>
+        </div>
+      )}
     </section>
   )
 }

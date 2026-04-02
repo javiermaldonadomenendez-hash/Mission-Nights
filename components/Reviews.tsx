@@ -40,6 +40,7 @@ const reviews = [
 export default function Reviews() {
   const [current, setCurrent] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [expanded, setExpanded] = useState<number | null>(null)
 
   const next = useCallback(() => {
     setCurrent(i => (i + 1) % reviews.length)
@@ -54,6 +55,15 @@ export default function Reviews() {
     const id = setInterval(next, 6000)
     return () => clearInterval(id)
   }, [paused, next])
+
+  useEffect(() => {
+    if (expanded === null) return
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setExpanded(null)
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [expanded])
 
   return (
     <section className="reviews" id="reviews">
@@ -74,6 +84,8 @@ export default function Reviews() {
                 key={r.name}
                 className={`review-card${i === current ? ' review-card--active' : ''}`}
                 aria-hidden={i !== current}
+                onClick={() => i === current && setExpanded(i)}
+                style={{ cursor: i === current ? 'zoom-in' : 'default' }}
               >
                 <div className="review-quote">
                   <svg width="28" height="20" viewBox="0 0 28 20" fill="none" aria-hidden="true">
@@ -93,7 +105,6 @@ export default function Reviews() {
             ))}
           </div>
 
-          {/* Prev / Next */}
           <button className="review-btn review-btn--prev" onClick={prev} aria-label="Vorherige Bewertung">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6" />
@@ -105,7 +116,6 @@ export default function Reviews() {
             </svg>
           </button>
 
-          {/* Dots */}
           <div className="review-dots">
             {reviews.map((_, i) => (
               <button
@@ -118,6 +128,33 @@ export default function Reviews() {
           </div>
         </div>
       </div>
+
+      {/* Expanded overlay */}
+      {expanded !== null && (
+        <div className="lightbox" onClick={() => setExpanded(null)}>
+          <button className="lightbox-close" onClick={() => setExpanded(null)} aria-label="Schließen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div className="review-expanded" onClick={e => e.stopPropagation()}>
+            <div className="review-quote">
+              <svg width="40" height="28" viewBox="0 0 28 20" fill="none" aria-hidden="true">
+                <path
+                  d="M0 20V12.4C0 8.93333 0.8 6.06667 2.4 3.8C4 1.53333 6.33333 0.133333 9.4 0L10.6 2.2C8.6 2.6 7.06667 3.46667 6 4.8C4.93333 6.13333 4.4 7.66667 4.4 9.4H8.8V20H0ZM16.8 20V12.4C16.8 8.93333 17.6 6.06667 19.2 3.8C20.8 1.53333 23.1333 0.133333 26.2 0L27.4 2.2C25.4 2.6 23.8667 3.46667 22.8 4.8C21.7333 6.13333 21.2 7.66667 21.2 9.4H25.6V20H16.8Z"
+                  fill="currentColor"
+                  opacity="0.15"
+                />
+              </svg>
+            </div>
+            <p className="review-expanded-text">{reviews[expanded].text}</p>
+            <div className="review-author" style={{ justifyContent: 'center', marginTop: '32px' }}>
+              <div className="review-avatar review-avatar--lg">{reviews[expanded].name[0]}</div>
+              <span className="review-name" style={{ fontSize: '1.125rem' }}>{reviews[expanded].name}</span>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
