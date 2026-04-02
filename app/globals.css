@@ -660,7 +660,10 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   padding: var(--pad-v) 0;
   background: var(--off-white);
 }
-.gallery-header { margin-bottom: clamp(40px, 5vw, 64px); }
+.gallery-header {
+  margin-bottom: clamp(40px, 5vw, 64px);
+  text-align: center;
+}
 .gallery-header h2 {
   font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 400;
@@ -792,12 +795,13 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 .phil-header {
   margin-bottom: clamp(48px, 7vw, 88px);
+  text-align: center;
 }
 .phil-header-inner {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   padding-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.1);
 }
@@ -806,14 +810,13 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.0;
-  flex-shrink: 0;
 }
 .phil-sub {
-  max-width: 360px;
+  max-width: 480px;
   font-size: 1rem;
   color: rgba(255,255,255,0.38);
   line-height: 1.65;
-  text-align: right;
+  text-align: center;
 }
 
 .phil-grid {
@@ -835,7 +838,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 .phil-num {
   display: block;
-  font-size: clamp(4rem, 10vw, 7.5rem);
+  font-size: clamp(6rem, 16vw, 13rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -1089,8 +1092,6 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   .g-item:nth-child(4) { grid-column: auto; aspect-ratio: 1; }
 
   .phil-grid { grid-template-columns: 1fr; }
-  .phil-header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .phil-sub { text-align: left; max-width: 100%; }
 
   .footer-top { grid-template-columns: 1fr; }
   .footer-cols { flex-wrap: wrap; gap: 32px; }
@@ -1100,7 +1101,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   .exp-grid { grid-template-columns: 1fr; }
   .exp-item:nth-child(5) { grid-column: auto; }
 
-  .phil-num { font-size: clamp(3rem, 8vw, 5rem); }
+  .phil-num { font-size: clamp(5rem, 14vw, 8rem); }
 
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; justify-content: center; }
