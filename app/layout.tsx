@@ -26,9 +26,11 @@ export const metadata: Metadata = {
     'Mission Nights: Exklusive Networking-Events für Unternehmer & Gründer in NRW. Nächster Termin: 21. April 2026, Mülheim an der Ruhr. Jetzt Platz sichern.',
   robots: { index: true, follow: true },
   icons: {
-    icon: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon',
-    shortcut: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon',
-    apple: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon',
+    icon: [
+      { url: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon.svg',
+    apple: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon.svg',
   },
   openGraph: {
     type: 'website',
@@ -64,7 +66,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Mission Nights',
   url: 'https://www.mission-nights.de',
-  logo: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon',
+  logo: 'https://assets.mission-nights.de/kunden/mission-nights/images/favicon.svg',
   description:
     'Mission Nights veranstaltet exklusive Networking-Events für Unternehmer, Gründer und ambitionierte Menschen in NRW.',
   address: {
