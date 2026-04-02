@@ -38,7 +38,23 @@ export default function Gallery() {
         </div>
       </div>
 
-      <div className="gallery-slider-wrap">
+      {/* Mobile: statisches Touch-Scroll, kein InfiniteSlider */}
+      <div className="gallery-mobile-scroll sm:hidden">
+        {images.map((img) => (
+          <div key={img.src} className="gallery-slide-item">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              width={260}
+              height={174}
+              className="gallery-slide-img"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: InfiniteSlider */}
+      <div className="gallery-slider-wrap hidden sm:flex">
         <InfiniteSlider gap={12} duration={35} durationOnHover={80}>
           {firstRow.map((img) => (
             <div key={img.src} className="gallery-slide-item">
