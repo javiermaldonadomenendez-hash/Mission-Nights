@@ -22,6 +22,16 @@
   --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
   --ease:       cubic-bezier(0.4, 0, 0.2, 1);
 
+  /* shadcn-compatible tokens */
+  --primary:            #0a0a0a;
+  --primary-foreground: #ffffff;
+  --background:         #ffffff;
+  --foreground:         #0a0a0a;
+  --muted:              #f5f5f5;
+  --muted-foreground:   #737373;
+  --card:               #ffffff;
+  --border:             #e8e8e8;
+
   --nav-h:     72px;
   --pad-v:     clamp(80px, 11vw, 144px);
   --pad-h:     clamp(24px, 6vw, 80px);

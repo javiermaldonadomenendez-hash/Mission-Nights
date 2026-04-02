@@ -14,6 +14,18 @@ const config: Config = {
       colors: {
         foreground: 'var(--foreground)',
         background: 'var(--background)',
+        primary: {
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
+        },
+        muted: {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
+        },
+        card: {
+          DEFAULT: 'var(--card)',
+        },
+        border: 'var(--border)',
       },
     },
   },
