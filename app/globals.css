@@ -1395,5 +1395,63 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   font-size: 1.125rem;
 }
 
+/* ===== FAQ ===== */
+.faq-section {
+  padding: var(--pad-v) 0;
+  background: var(--white);
+}
+.faq-header {
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.faq-header h2 {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  margin-top: 8px;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 780px;
+}
+.faq-item {
+  border-top: 1px solid var(--gray-200);
+}
+.faq-item:last-child {
+  border-bottom: 1px solid var(--gray-200);
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(18px, 2.5vw, 26px) 0;
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  font-weight: 400;
+  color: var(--black);
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.2s;
+}
+.faq-question:hover { color: var(--gray-600); }
+.faq-icon {
+  flex-shrink: 0;
+  transition: transform 0.25s var(--ease-out);
+}
+.faq-icon--open { transform: rotate(45deg); }
+.faq-minus { transition: opacity 0.2s; }
+.faq-minus--hidden { opacity: 0; }
+.faq-answer {
+  font-size: 1rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+  padding-bottom: clamp(18px, 2.5vw, 26px);
+  max-width: 660px;
+}
+
 /* Tailwind utilities (preflight disabled — no CSS reset conflicts) */
 @tailwind utilities;

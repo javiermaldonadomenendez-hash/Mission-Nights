@@ -8,6 +8,7 @@ import VisionDinner from '@/components/VisionDinner'
 import Philosophy from '@/components/Philosophy'
 import Reviews from '@/components/Reviews'
 import CTA from '@/components/CTA'
+import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
 import ScrollRevealInit from '@/components/ScrollRevealInit'
 
@@ -25,6 +26,7 @@ export default function Home() {
       <VisionDinner />
       <Reviews />
       <CTA />
+      <FAQ />
       <Footer />
     </>
   )
