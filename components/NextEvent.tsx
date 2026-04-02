@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function NextEvent() {
   return (
     <section className="next-event" id="event">
@@ -5,12 +7,19 @@ export default function NextEvent() {
         <div className="section-header reveal">
           <span className="label">Nächstes Event</span>
           <h2>Die Mission wartet.</h2>
-          <p>Ein Abend, der bleibt. Limitierte Plätze. Exklusiver Kreis.</p>
+          <p>Ein Abend, der verbindet. Für Menschen, die mehr wollen.</p>
         </div>
 
         <div className="event-card reveal">
           {/* Visual side */}
           <div className="event-visual">
+            <Image
+              src="https://assets.mission-nights.de/kunden/mission-nights/images/mnvision9.webp"
+              alt="Mission Nights Vision Dinner"
+              fill
+              sizes="(max-width: 768px) 100vw, 400px"
+              style={{ objectFit: 'cover', objectPosition: 'center center', zIndex: 0 }}
+            />
             <div className="ev-date">
               <span className="ev-day">21</span>
               <span className="ev-month">April 2026</span>
@@ -24,11 +33,11 @@ export default function NextEvent() {
           {/* Details side */}
           <div className="event-details">
             <div>
-              <span className="ev-theme-tag">Format</span>
+              <span className="ev-theme-tag">Der Abend</span>
               <div className="ev-theme">
-                Vision Dinner —
+                Verbindungen, die bleiben —
                 <br />
-                Tafeln, inspirieren, verbinden.
+                Netzwerken auf einem anderen Level.
               </div>
 
               <ul className="ev-meta">
@@ -69,9 +78,12 @@ export default function NextEvent() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <path d="M3 2h18M3 7h18M3 12h12M3 17h8" />
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                   </svg>
-                  Exklusives Dinner mit kuratierten Gästen
+                  Kuratierter Kreis — max. 40 Gäste
                 </li>
               </ul>
 

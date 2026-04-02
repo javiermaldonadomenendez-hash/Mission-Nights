@@ -3,20 +3,22 @@
 import Image from 'next/image'
 import { useState, useEffect, useCallback } from 'react'
 
-// Bilder-CDN: https://assets.mission-nights.de/kunden/mission-nights/images/
-// Dateinamen bitte ggf. an tatsächliche Server-Dateinamen anpassen (z.B. "MN Vision 1.webp")
 const BASE = 'https://assets.mission-nights.de/kunden/mission-nights/images'
 
 const images = [
-  { src: `${BASE}/mnvision1.webp`,  alt: 'Mission Nights Vision Dinner' },
-  { src: `${BASE}/mnvision2.webp`,  alt: 'Mission Nights Atmosphäre' },
-  { src: `${BASE}/mnvision3.webp`,  alt: 'Mission Nights Networking' },
-  { src: `${BASE}/mnvision4.webp`,  alt: 'Mission Nights Gespräche' },
-  { src: `${BASE}/mnvision5.webp`,  alt: 'Mission Nights Community' },
-  { src: `${BASE}/mnvision6.webp`,  alt: 'Mission Nights Inspiration' },
-  { src: `${BASE}/mnvision7.webp`,  alt: 'Mission Nights Abend' },
-  { src: `${BASE}/mnvision9.webp`,  alt: 'Mission Nights Menschen' },
-  { src: `${BASE}/mnvision10.webp`, alt: 'Mission Nights Verbindungen' },
+  { src: `${BASE}/mnvision1.webp`,        alt: 'Mission Nights Vision Dinner' },
+  { src: `${BASE}/mnvision2.webp`,        alt: 'Mission Nights Atmosphäre' },
+  { src: `${BASE}/mnvision3.webp`,        alt: 'Mission Nights Networking' },
+  { src: `${BASE}/mnvision4.webp`,        alt: 'Mission Nights Gespräche' },
+  { src: `${BASE}/mnvision5.webp`,        alt: 'Mission Nights Community' },
+  { src: `${BASE}/mnvision6.webp`,        alt: 'Mission Nights Inspiration' },
+  { src: `${BASE}/mnvision7.webp`,        alt: 'Mission Nights Abend' },
+  { src: `${BASE}/mnvision9.webp`,        alt: 'Mission Nights Menschen' },
+  { src: `${BASE}/mnvision10.webp`,       alt: 'Mission Nights Verbindungen' },
+  { src: `${BASE}/mission-nights2.webp`,  alt: 'Mission Nights Event' },
+  { src: `${BASE}/mission-nights3.webp`,  alt: 'Mission Nights Networking' },
+  { src: `${BASE}/mission-nights4.webp`,  alt: 'Mission Nights Abendatmosphäre' },
+  { src: `${BASE}/mission-nights5.webp`,  alt: 'Mission Nights Talk & Inspiration' },
 ]
 
 export default function Gallery() {
@@ -67,7 +69,7 @@ export default function Gallery() {
                 alt={img.alt}
                 fill
                 sizes="100vw"
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                style={{ objectFit: 'contain', objectPosition: 'center' }}
                 priority={i === 0}
               />
             </div>
