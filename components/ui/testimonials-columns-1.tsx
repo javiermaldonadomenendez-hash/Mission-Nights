@@ -20,7 +20,6 @@ export const TestimonialsColumn = (props: {
         className="flex flex-col gap-6 pb-6"
         style={{
           animation: `slider-y ${duration}s linear infinite`,
-          willChange: 'transform',
           backgroundColor: 'var(--white)',
         }}
       >

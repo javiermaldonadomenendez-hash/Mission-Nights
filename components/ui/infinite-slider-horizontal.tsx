@@ -36,7 +36,6 @@ export function InfiniteSlider({
         style={{
           gap: `${gap}px`,
           animation: `${animationName} ${duration}s linear infinite`,
-          willChange: 'transform',
           ...(durationOnHover && {
             ['--duration-hover' as string]: `${durationOnHover}s`,
           }),

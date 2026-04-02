@@ -280,7 +280,6 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
-  will-change: transform;
 }
 .hero-cloud.c1 {
   width: 75%;
@@ -330,6 +329,11 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 @media (prefers-reduced-motion: reduce) {
   .hero-cloud { animation: none; }
+}
+
+/* Mobile: Hero-Clouds deaktivieren — zu viele GPU-Layer crashen Mobile-Browser */
+@media (max-width: 768px) {
+  .hero-cloud { animation: none; filter: blur(60px); }
 }
 
 .hero-inner {
@@ -1461,6 +1465,14 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   line-height: 1.7;
   padding-bottom: clamp(18px, 2.5vw, 26px);
   max-width: 660px;
+}
+
+/* Desktop-only will-change für Slider-Performance */
+@media (min-width: 769px) {
+  .gallery-slider-wrap [style*="animation: slider"],
+  .reviews [style*="animation: slider"] {
+    will-change: transform;
+  }
 }
 
 /* ===== INFINITE SLIDER KEYFRAMES ===== */
