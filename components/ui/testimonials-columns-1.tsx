@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 export type Testimonial = {
   text: string;
-  image: string;
   name: string;
   role: string;
 };
@@ -29,7 +28,7 @@ export const TestimonialsColumn = (props: {
       >
         {[...new Array(2).fill(0).map((_, index) => (
           <React.Fragment key={index}>
-            {props.testimonials.map(({ text, image, name, role }, i) => (
+            {props.testimonials.map(({ text, name, role }, i) => (
               <div
                 key={i}
                 className="p-8 rounded-3xl border max-w-xs w-full"
@@ -53,28 +52,19 @@ export const TestimonialsColumn = (props: {
                 >
                   {text}
                 </p>
-                <div className="flex items-center gap-3">
-                  <img
-                    width={40}
-                    height={40}
-                    src={image}
-                    alt={name}
-                    className="h-10 w-10 rounded-full object-cover"
-                  />
-                  <div className="flex flex-col">
-                    <span
-                      className="text-sm font-semibold leading-5"
-                      style={{ color: "var(--black)" }}
-                    >
-                      {name}
-                    </span>
-                    <span
-                      className="text-xs leading-5"
-                      style={{ color: "var(--gray-400)" }}
-                    >
-                      {role}
-                    </span>
-                  </div>
+                <div className="flex flex-col">
+                  <span
+                    className="text-sm font-semibold leading-5"
+                    style={{ color: "var(--black)" }}
+                  >
+                    {name}
+                  </span>
+                  <span
+                    className="text-xs leading-5"
+                    style={{ color: "var(--gray-400)" }}
+                  >
+                    {role}
+                  </span>
                 </div>
               </div>
             ))}
