@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 
 export type Testimonial = {
   text: string;
@@ -13,18 +12,17 @@ export const TestimonialsColumn = (props: {
   testimonials: Testimonial[];
   duration?: number;
 }) => {
+  const duration = props.duration || 10;
+
   return (
-    <div className={props.className}>
-      <motion.div
-        animate={{ translateY: "-50%" }}
-        transition={{
-          duration: props.duration || 10,
-          repeat: Infinity,
-          ease: "linear",
-          repeatType: "loop",
-        }}
+    <div className={props.className} style={{ overflow: 'hidden' }}>
+      <div
         className="flex flex-col gap-6 pb-6"
-        style={{ backgroundColor: "var(--white)" }}
+        style={{
+          animation: `slider-y ${duration}s linear infinite`,
+          willChange: 'transform',
+          backgroundColor: 'var(--white)',
+        }}
       >
         {[...new Array(2).fill(0).map((_, index) => (
           <React.Fragment key={index}>
@@ -38,7 +36,6 @@ export const TestimonialsColumn = (props: {
                   background: "var(--white)",
                 }}
               >
-                {/* Stars */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, s) => (
                     <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="#0a0a0a" aria-hidden="true">
@@ -46,23 +43,14 @@ export const TestimonialsColumn = (props: {
                     </svg>
                   ))}
                 </div>
-                <p
-                  className="text-sm leading-relaxed mb-5"
-                  style={{ color: "var(--gray-600)" }}
-                >
+                <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--gray-600)" }}>
                   {text}
                 </p>
                 <div className="flex flex-col">
-                  <span
-                    className="text-sm font-semibold leading-5"
-                    style={{ color: "var(--black)" }}
-                  >
+                  <span className="text-sm font-semibold leading-5" style={{ color: "var(--black)" }}>
                     {name}
                   </span>
-                  <span
-                    className="text-xs leading-5"
-                    style={{ color: "var(--gray-400)" }}
-                  >
+                  <span className="text-xs leading-5" style={{ color: "var(--gray-400)" }}>
                     {role}
                   </span>
                 </div>
@@ -70,7 +58,7 @@ export const TestimonialsColumn = (props: {
             ))}
           </React.Fragment>
         ))]}
-      </motion.div>
+      </div>
     </div>
   );
 };
