@@ -35,11 +35,11 @@ export default async function DisziplinInRoutinen() {
         {/* Hero */}
         <div style={{ position: 'relative', height: 'clamp(280px, 45vw, 520px)', background: 'var(--gray-900)', overflow: 'hidden' }}>
           <Image
-            src="https://assets.mission-nights.de/kunden/mission-nights/images/blogbild1.png"
+            src="https://assets.mission-nights.de/kunden/mission-nights/images/blogbild2.jpg"
             alt="Wie du Routinen aufbaust, die bleiben"
             fill
             priority
-            style={{ objectFit: 'cover', objectPosition: 'center 30%', opacity: 0.7 }}
+            style={{ objectFit: 'cover', objectPosition: 'center center', opacity: 0.6 }}
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6))' }} />
           <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: 'clamp(32px,5vw,72px)' }}>
