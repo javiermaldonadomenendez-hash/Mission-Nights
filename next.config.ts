@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: 'assets.mission-nights.de',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
     ],
   },
   async headers() {

@@ -40,6 +40,7 @@ export default function Nav({ alwaysScrolled = false }: NavProps) {
               <li><a href="#event">Event</a></li>
               <li><a href="#experience">Experience</a></li>
               <li><a href="#community">Community</a></li>
+              <li><Link href="/blog">Blog</Link></li>
             </ul>
             <div className="nav-cta-wrap">
               <a
@@ -65,6 +66,7 @@ export default function Nav({ alwaysScrolled = false }: NavProps) {
         <a href="#event" className="m-link" onClick={closeMenu}>Event</a>
         <a href="#experience" className="m-link" onClick={closeMenu}>Experience</a>
         <a href="#community" className="m-link" onClick={closeMenu}>Community</a>
+        <Link href="/blog" className="m-link" onClick={closeMenu}>Blog</Link>
         <a href="#event" className="m-link mobile-cta" onClick={closeMenu}>Platz sichern</a>
       </div>
     </>
