@@ -20,7 +20,7 @@ export default function DisziplinInRoutinen() {
         {/* Hero */}
         <div style={{ position: 'relative', height: 'clamp(280px, 45vw, 520px)', background: 'var(--gray-900)', overflow: 'hidden' }}>
           <Image
-            src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1600&q=80"
+            src="https://assets.mission-nights.de/kunden/mission-nights/images/blogbild1.png"
             alt="Disziplin und Routinen"
             fill
             priority

@@ -17,7 +17,7 @@ const articlesData: BlogArticle[] = [
     category: 'PERSÖNLICHKEIT',
     description:
       'Warum Willenskraft überschätzt wird — und welche wissenschaftlich belegten Systeme dich wirklich weiterbringen.',
-    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&q=80',
+    image: 'https://assets.mission-nights.de/kunden/mission-nights/images/blogbild1.png',
     publishDate: '2. April 2026',
     readMoreLink: '/blog/disziplin-in-routinen',
     title: 'Warum Disziplin allein nicht reicht',
