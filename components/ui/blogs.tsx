@@ -25,12 +25,11 @@ const articlesData: BlogArticle[] = [
   {
     category: 'NETZWERK',
     description:
-      'Wie du auf Events echte Verbindungen knüpfst, die über den Abend hinaus halten.',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
-    publishDate: 'Demnächst',
-    readMoreLink: '#',
+      'Nicht die Anzahl deiner Kontakte zählt — sondern wie du sie aufbaust. Was Wissenschaft und Praxis wirklich sagen.',
+    image: 'https://assets.mission-nights.de/kunden/mission-nights/images/mission-nights1.webp',
+    publishDate: '4. April 2026',
+    readMoreLink: '/blog/networking-neu-gedacht',
     title: 'Networking neu gedacht',
-    comingSoon: true,
   },
   {
     category: 'UNTERNEHMERTUM',
