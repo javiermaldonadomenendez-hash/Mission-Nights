@@ -36,10 +36,9 @@ const articlesData: BlogArticle[] = [
     description:
       'Warum die richtigen Menschen in deinem Umfeld wichtiger sind als jede Strategie.',
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
-    publishDate: 'Demnächst',
-    readMoreLink: '#',
+    publishDate: '6. April 2026',
+    readMoreLink: '/blog/das-prinzip-der-richtigen-menschen',
     title: 'Das Prinzip der richtigen Menschen',
-    comingSoon: true,
   },
 ]
 
