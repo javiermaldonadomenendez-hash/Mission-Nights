@@ -1662,6 +1662,52 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   line-height: 1;
 }
 
+/* Alle Section-Headlines zentrieren */
+.bs-section h2,
+.bs-why h2,
+.bs-solution-title,
+.bs-partner-header h2,
+.bs-benefits-title,
+.bs-for-whom h2,
+.bs-process-title,
+.bs-diff-quote,
+.bs-cta-title {
+  text-align: center;
+}
+.bs-partner-header,
+.bs-solution-header,
+.bs-process-header {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+.bs-solution-sub,
+.bs-process-sub {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Webmoderno Logo Link */
+.bs-wm-logo-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.bs-wm-logo-link:hover { opacity: 1; }
+
+/* CTA E-Mail */
+.bs-cta-mail {
+  display: block;
+  margin-top: 16px;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.bs-cta-mail:hover { color: rgba(255,255,255,0.8); }
+
 /* Webmoderno Stats */
 .bs-wm-stats {
   display: flex;

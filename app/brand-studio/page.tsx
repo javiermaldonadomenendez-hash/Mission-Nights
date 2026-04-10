@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollRevealInit from '@/components/ScrollRevealInit'
@@ -49,7 +50,7 @@ export default function BrandStudioPage() {
             Markenauftritt mit Klarheit.<br />
             Website mit Wirkung.
           </h1>
-          <p className="bs-hero-sub">
+          <p className="bs-hero-sub" style={{ fontSize: 'clamp(0.8rem, 1.4vw, 1rem)' }}>
             Strategie, Positionierung und digitale Umsetzung – für Unternehmen,
             die beim ersten Eindruck überzeugen wollen.
           </p>
@@ -146,7 +147,15 @@ export default function BrandStudioPage() {
               <span className="bs-partner-divider-label">+</span>
             </div>
             <div className="bs-partner-card reveal d2">
-              <span className="bs-partner-label">Webmoderno</span>
+              <a href="https://www.webmoderno.de" target="_blank" rel="noopener noreferrer" className="bs-wm-logo-link">
+                <Image
+                  src="https://assets.webmoderno.de/global/logos/webmoderno-logo.png"
+                  alt="Webmoderno"
+                  width={160}
+                  height={36}
+                  style={{ objectFit: 'contain', objectPosition: 'left' }}
+                />
+              </a>
               <h3>Klar. Schnell. Bezahlbar.</h3>
               <div className="bs-wm-stats">
                 <div className="bs-wm-stat">
@@ -246,6 +255,7 @@ export default function BrandStudioPage() {
             </p>
             <div className="bs-cta-actions reveal d2">
               <a href="mailto:info@mission-nights.de" className="btn btn-light btn-lg">Gespräch anfragen</a>
+              <a href="mailto:info@mission-nights.de" className="bs-cta-mail reveal d3">info@mission-nights.de</a>
             </div>
           </div>
         </div>
