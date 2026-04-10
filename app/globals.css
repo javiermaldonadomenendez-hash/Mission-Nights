@@ -1697,6 +1697,13 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   text-align: center;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.bs-solution-header .label,
+.bs-solution-header .bs-solution-header-inner {
+  text-align: center;
+  width: 100%;
 }
 .bs-solution-sub,
 .bs-process-sub {
