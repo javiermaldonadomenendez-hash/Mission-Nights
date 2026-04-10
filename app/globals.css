@@ -1598,6 +1598,70 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 
 /* ─────────────────────────────────────────────────────────────────
+   BRAND STUDIO TEASER  (Hauptseite)
+───────────────────────────────────────────────────────────────── */
+.bs-teaser {
+  padding: var(--pad-v) 0;
+  background: var(--black);
+  color: var(--white);
+}
+
+.bs-teaser-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(48px, 7vw, 100px);
+  align-items: center;
+}
+
+.bs-teaser-title {
+  font-size: clamp(1.875rem, 4vw, 3.25rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+
+.bs-teaser-sub {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  color: rgba(255,255,255,0.5);
+  line-height: 1.78;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+
+.bs-teaser-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.bs-teaser-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px;
+  padding: 6px 16px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .bs-teaser-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .bs-teaser-tags {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
    BRAND STUDIO PAGE  (.bs-*)
    Mission Nights Brand Studio × Webmoderno
 ───────────────────────────────────────────────────────────────── */

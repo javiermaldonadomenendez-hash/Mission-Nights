@@ -7,6 +7,7 @@ import Gallery from '@/components/Gallery'
 import VisionDinner from '@/components/VisionDinner'
 import Philosophy from '@/components/Philosophy'
 import Reviews from '@/components/Reviews'
+import BrandStudioTeaser from '@/components/BrandStudioTeaser'
 import CTA from '@/components/CTA'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
@@ -25,6 +26,7 @@ export default function Home() {
       <Philosophy />
       <VisionDinner />
       <Reviews />
+      <BrandStudioTeaser />
       <CTA />
       <FAQ />
       <Footer />
