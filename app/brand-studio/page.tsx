@@ -43,14 +43,14 @@ export default function BrandStudioPage() {
           <div className="bs-hero-cloud c3" />
         </div>
         <div className="bs-hero-inner reveal">
-          <span className="label label--light" style={{ marginBottom: '28px', display: 'block' }}>
+          <span className="label label--light bs-hero-brand-label" style={{ marginBottom: '28px', display: 'block' }}>
             Mission Nights Brand Studio
           </span>
           <h1 className="bs-hero-title">
             Markenauftritt mit Klarheit.<br />
             Website mit Wirkung.
           </h1>
-          <p className="bs-hero-sub" style={{ fontSize: 'clamp(0.8rem, 1.4vw, 1rem)' }}>
+          <p className="bs-hero-sub" style={{ fontSize: 'clamp(0.65rem, 1.1vw, 0.8rem)' }}>
             Strategie, Positionierung und digitale Umsetzung – für Unternehmen,
             die beim ersten Eindruck überzeugen wollen.
           </p>
@@ -114,7 +114,7 @@ export default function BrandStudioPage() {
               { num: '03', title: 'Durchdachte Kommunikation', tag: 'Botschaft' },
               { num: '04', title: 'Digitale Präsenz mit Wirkung', tag: 'Digital' },
             ].map((card, i) => (
-              <div key={card.num} className={`phil-card reveal${i > 0 ? ` d${i}` : ''}`}>
+              <div key={card.num} className={`phil-card bs-solution-card reveal${i > 0 ? ` d${i}` : ''}`}>
                 <span className="phil-num">{card.num}</span>
                 <p className="phil-text">{card.title}</p>
                 <span className="phil-tag">{card.tag}</span>
@@ -255,7 +255,6 @@ export default function BrandStudioPage() {
             </p>
             <div className="bs-cta-actions reveal d2">
               <a href="mailto:info@mission-nights.de" className="btn btn-light btn-lg">Gespräch anfragen</a>
-              <a href="mailto:info@mission-nights.de" className="bs-cta-mail reveal d3">info@mission-nights.de</a>
             </div>
           </div>
         </div>

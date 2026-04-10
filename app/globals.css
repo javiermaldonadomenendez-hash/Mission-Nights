@@ -1662,6 +1662,23 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   line-height: 1;
 }
 
+/* Hero Brand Label größer */
+.bs-hero-brand-label {
+  font-size: 0.875rem !important;
+  letter-spacing: 0.18em;
+}
+
+/* Lösung Karten — phil-text zentrieren */
+.bs-solution-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bs-solution-card .phil-num {
+  text-align: center;
+}
+
 /* Alle Section-Headlines zentrieren */
 .bs-section h2,
 .bs-why h2,
