@@ -1711,14 +1711,36 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   margin: 0 auto;
 }
 
-/* Webmoderno Logo Link */
-.bs-wm-logo-link {
+/* Webmoderno Wordmark */
+.bs-wm-wordmark {
   display: inline-block;
-  margin-bottom: 20px;
-  opacity: 0.75;
-  transition: opacity 0.2s;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 12px;
 }
-.bs-wm-logo-link:hover { opacity: 1; }
+
+/* Webmoderno CTA Button */
+.bs-wm-cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 24px;
+  padding: 12px 22px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background 0.22s var(--ease-out), transform 0.22s var(--ease-out);
+}
+.bs-wm-cta:hover {
+  background: var(--gray-800);
+  transform: translateY(-1px);
+}
 
 /* CTA E-Mail */
 .bs-cta-mail {
@@ -2564,6 +2586,60 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   .bs-process-card {
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
+}
+
+/* ── WhatsApp FAB ─────────────────────────────────────────────── */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: transform 0.22s var(--ease-out), box-shadow 0.22s var(--ease-out);
+  text-decoration: none;
+}
+.whatsapp-fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+}
+
+/* ── Google Rating (Hero) ────────────────────────────────────── */
+.hero-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.hero-stars {
+  color: #f59e0b;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+.hero-rating-text {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.02em;
+}
+
+/* ── Mobile Split Fix ────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .bs-split-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .bs-split-divider { display: none; }
+  .bs-split-col { align-items: center; text-align: center; }
+  .bs-split-word { font-size: clamp(1.25rem, 6vw, 1.875rem); }
 }
 
 /* Tailwind utilities (preflight disabled — no CSS reset conflicts) */

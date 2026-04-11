@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import CookieConsent from '@/components/CookieConsent/CookieConsent'
+import WhatsAppButton from '@/components/WhatsAppButton'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -93,6 +94,7 @@ export default function RootLayout({
       <body>
         {children}
         <CookieConsent />
+        <WhatsAppButton />
       </body>
     </html>
   )

@@ -14,6 +14,10 @@ export default function Hero() {
           Nights
         </h1>
         <p className="hero-subtitle">Wo Vision auf Menschen trifft.</p>
+        <div className="hero-rating reveal d1">
+          <span className="hero-stars">★★★★★</span>
+          <span className="hero-rating-text">5,0 / 5,0 Sterne bei Google</span>
+        </div>
         <div className="hero-actions">
           <a href="#event" className="btn btn-light btn-md">
             Zur nächsten Mission Night

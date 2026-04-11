@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollRevealInit from '@/components/ScrollRevealInit'
@@ -147,15 +146,7 @@ export default function BrandStudioPage() {
               <span className="bs-partner-divider-label">+</span>
             </div>
             <div className="bs-partner-card reveal d2">
-              <a href="https://www.webmoderno.de" target="_blank" rel="noopener noreferrer" className="bs-wm-logo-link">
-                <Image
-                  src="https://assets.webmoderno.de/global/logos/webmoderno-logo.png"
-                  alt="Webmoderno"
-                  width={160}
-                  height={36}
-                  style={{ objectFit: 'contain', objectPosition: 'left' }}
-                />
-              </a>
+              <span className="bs-wm-wordmark">webmoderno</span>
               <h3>Klar. Schnell. Bezahlbar.</h3>
               <div className="bs-wm-stats">
                 <div className="bs-wm-stat">
@@ -171,6 +162,14 @@ export default function BrandStudioPage() {
                   <span className="bs-wm-lbl">persönliche Betreuung</span>
                 </div>
               </div>
+              <a
+                href="https://www.webmoderno.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bs-wm-cta"
+              >
+                webmoderno.de besuchen →
+              </a>
             </div>
           </div>
         </div>
