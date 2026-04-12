@@ -1,4 +1,4 @@
-/* ===== BANNER ===== */
+/* ===== BANNER — DESKTOP ===== */
 .banner {
   position: fixed;
   bottom: 0;
@@ -19,6 +19,11 @@
   gap: 40px;
 }
 
+/* Logo — auf Desktop ausgeblendet */
+.logo {
+  display: none;
+}
+
 .content {
   flex: 1;
   min-width: 0;
@@ -36,7 +41,6 @@
   font-size: 0.8125rem;
   color: #737373;
   line-height: 1.65;
-  margin-bottom: 10px;
 }
 
 .text a {
@@ -44,29 +48,33 @@
   border-bottom: 1px solid #e8e8e8;
   transition: border-color 0.2s;
 }
-.text a:hover {
-  border-color: #0a0a0a;
-}
+.text a:hover { border-color: #0a0a0a; }
 
-.links {
-  display: flex;
-  gap: 16px;
-}
-.links a {
-  font-size: 0.75rem;
-  color: #a3a3a3;
-  transition: color 0.2s;
-}
-.links a:hover {
-  color: #0a0a0a;
-}
-
-/* ===== BANNER BUTTONS ===== */
+/* ===== BUTTONS — DESKTOP ===== */
 .buttons {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+}
+
+.btnAccept {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 10px 18px;
+  border-radius: 100px;
+  border: none;
+  background: #0a0a0a;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.btnAccept:hover {
+  background: #262626;
+  transform: translateY(-1px);
 }
 
 .btnReject {
@@ -91,7 +99,7 @@
 .btnCustomize {
   font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   padding: 10px 18px;
   border-radius: 100px;
   border: 1px solid #262626;
@@ -107,23 +115,9 @@
   color: #fff;
 }
 
-.btnAccept {
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  padding: 10px 18px;
-  border-radius: 100px;
-  border: none;
-  background: #0a0a0a;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  white-space: nowrap;
-  font-family: inherit;
-}
-.btnAccept:hover {
-  background: #262626;
-  transform: translateY(-1px);
+/* Links — auf Desktop ausgeblendet */
+.links {
+  display: none;
 }
 
 /* ===== MODAL ===== */
@@ -186,24 +180,18 @@
   gap: 20px;
 }
 
-.catInfo {
-  flex: 1;
-  min-width: 0;
-}
-
+.catInfo { flex: 1; min-width: 0; }
 .catName {
   font-size: 0.9375rem;
   font-weight: 500;
   color: #0a0a0a;
   margin-bottom: 3px;
 }
-
 .catDesc {
   font-size: 0.8125rem;
   color: #a3a3a3;
   line-height: 1.5;
 }
-
 .alwaysActive {
   font-size: 0.6875rem;
   font-weight: 500;
@@ -221,14 +209,12 @@
   flex-shrink: 0;
   cursor: pointer;
 }
-
 .toggle input {
   opacity: 0;
   width: 0;
   height: 0;
   position: absolute;
 }
-
 .toggleSlider {
   position: absolute;
   inset: 0;
@@ -236,7 +222,6 @@
   border-radius: 100px;
   transition: background 0.25s;
 }
-
 .toggleSlider::before {
   content: '';
   position: absolute;
@@ -249,67 +234,21 @@
   transition: transform 0.25s;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
 }
-
-.toggle input:checked + .toggleSlider {
-  background: #0a0a0a;
-}
-
-.toggle input:checked + .toggleSlider::before {
-  transform: translateX(20px);
-}
-
-.toggle input:disabled + .toggleSlider {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
+.toggle input:checked + .toggleSlider { background: #0a0a0a; }
+.toggle input:checked + .toggleSlider::before { transform: translateX(20px); }
+.toggle input:disabled + .toggleSlider { opacity: 0.45; cursor: not-allowed; }
 
 /* ===== MODAL BUTTONS ===== */
 .modalButtons {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.modalBtnReject {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  padding: 12px 22px;
-  border-radius: 100px;
-  border: 1px solid #e8e8e8;
-  background: transparent;
-  color: #737373;
-  cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
-  font-family: inherit;
-}
-.modalBtnReject:hover {
-  border-color: #a3a3a3;
-  color: #0a0a0a;
-}
-
-.modalBtnSave {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  padding: 12px 22px;
-  border-radius: 100px;
-  border: 1px solid #262626;
-  background: transparent;
-  color: #262626;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  font-family: inherit;
-}
-.modalBtnSave:hover {
-  background: #262626;
-  color: #fff;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .modalBtnAccept {
-  margin-left: auto;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  padding: 12px 22px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 15px 22px;
   border-radius: 100px;
   border: none;
   background: #0a0a0a;
@@ -317,45 +256,149 @@
   cursor: pointer;
   transition: background 0.2s;
   font-family: inherit;
+  text-align: center;
 }
-.modalBtnAccept:hover {
-  background: #262626;
-}
+.modalBtnAccept:hover { background: #262626; }
 
-/* ===== RESPONSIVE ===== */
+.modalBtnSave {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 15px 22px;
+  border-radius: 100px;
+  border: 1px solid #262626;
+  background: transparent;
+  color: #262626;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+  text-align: center;
+}
+.modalBtnSave:hover { background: #262626; color: #fff; }
+
+.modalBtnReject {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 15px 22px;
+  border-radius: 100px;
+  border: 1px solid #e8e8e8;
+  background: transparent;
+  color: #737373;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  font-family: inherit;
+  text-align: center;
+}
+.modalBtnReject:hover { border-color: #a3a3a3; color: #0a0a0a; }
+
+/* ===== MOBILE — vollflächiges Modal ===== */
 @media (max-width: 768px) {
+  .banner {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: none;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
   .inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .buttons {
     width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #ffffff;
+    border-radius: 20px 20px 0 0;
+    padding: 32px 24px 40px;
   }
 
-  .btnReject,
-  .btnCustomize,
-  .btnAccept {
-    flex: 1;
-    justify-content: center;
+  /* Logo sichtbar auf Mobile */
+  .logo {
+    display: block;
+    font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0a0a0a;
+    margin-bottom: 24px;
     text-align: center;
   }
+
+  .content {
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .text {
+    font-size: 0.8125rem;
+    color: #737373;
+  }
+
+  /* Buttons — gestapelt, vollbreit */
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btnAccept {
+    width: 100%;
+    padding: 16px;
+    font-size: 0.8125rem;
+    border-radius: 100px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .btnReject {
+    width: 100%;
+    padding: 16px;
+    font-size: 0.8125rem;
+    border-radius: 100px;
+    text-align: center;
+  }
+
+  .btnCustomize {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.75rem;
+    border: none;
+    background: transparent;
+    color: #a3a3a3;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .btnCustomize:hover { background: transparent; color: #737373; }
+
+  /* Links sichtbar auf Mobile */
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    font-size: 0.75rem;
+    color: #a3a3a3;
+  }
+  .links a {
+    color: #a3a3a3;
+    transition: color 0.2s;
+  }
+  .links a:hover { color: #0a0a0a; }
+  .links span { color: #d4d4d4; }
 
   .modal {
     padding: 28px 20px;
-  }
-
-  .modalButtons {
-    flex-direction: column;
-  }
-
-  .modalBtnReject,
-  .modalBtnSave,
-  .modalBtnAccept {
-    width: 100%;
-    text-align: center;
-    margin-left: 0;
+    border-radius: 16px 16px 0 0;
+    max-height: 95vh;
   }
 }
 

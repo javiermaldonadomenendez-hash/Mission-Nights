@@ -41,32 +41,38 @@ export default function CookieConsent() {
       {!showModal && (
         <div className={styles.banner}>
           <div className={styles.inner}>
+
+            {/* Logo — nur mobile sichtbar */}
+            <div className={styles.logo}>MISSION NIGHTS</div>
+
             <div className={styles.content}>
               <div className={styles.heading}>Datenschutzeinstellungen</div>
               <p className={styles.text}>
                 Wir setzen Cookies, um unseren Internetauftritt benutzerfreundlicher
-                zu gestalten, optimal auf Ihre Bedürfnisse anzupassen und
-                pseudonymisiert auszuwerten. Weitere Informationen finden Sie in
-                unserer{' '}
+                zu gestalten und pseudonymisiert auszuwerten. Weitere Informationen
+                in unserer{' '}
                 <Link href="/datenschutz">Datenschutzerklärung</Link>.
               </p>
-              <div className={styles.links}>
-                <Link href="/impressum">Impressum</Link>
-                <Link href="/datenschutz">Datenschutz</Link>
-              </div>
             </div>
 
             <div className={styles.buttons}>
+              <button className={styles.btnAccept} onClick={acceptAll}>
+                ALLES ANNEHMEN
+              </button>
               <button className={styles.btnReject} onClick={rejectAll}>
                 ALLE ABLEHNEN
               </button>
               <button className={styles.btnCustomize} onClick={() => setShowModal(true)}>
-                ANPASSEN
-              </button>
-              <button className={styles.btnAccept} onClick={acceptAll}>
-                ALLES ANNEHMEN
+                Anpassen
               </button>
             </div>
+
+            <div className={styles.links}>
+              <Link href="/impressum">Impressum</Link>
+              <span>|</span>
+              <Link href="/datenschutz">Datenschutz</Link>
+            </div>
+
           </div>
         </div>
       )}
@@ -81,71 +87,43 @@ export default function CookieConsent() {
             <div className={styles.modalHeading}>Datenschutzeinstellungen</div>
             <p className={styles.modalSubtext}>
               Wählen Sie, welche Cookies Sie zulassen möchten. Notwendige Cookies
-              sind immer aktiv, da sie für den Betrieb der Website erforderlich sind.
+              sind immer aktiv.
             </p>
 
             <div className={styles.categories}>
-              {/* Notwendig – immer aktiv */}
               <div className={styles.category}>
                 <div className={styles.catInfo}>
                   <div className={styles.catName}>Notwendig</div>
-                  <div className={styles.catDesc}>
-                    Technisch erforderlich für den Betrieb der Website.
-                    Können nicht deaktiviert werden.
-                  </div>
+                  <div className={styles.catDesc}>Technisch erforderlich. Können nicht deaktiviert werden.</div>
                 </div>
                 <span className={styles.alwaysActive}>Immer aktiv</span>
               </div>
-
-              {/* Analyse */}
               <div className={styles.category}>
                 <div className={styles.catInfo}>
                   <div className={styles.catName}>Analyse</div>
-                  <div className={styles.catDesc}>
-                    Anonymisierte Auswertung der Website-Nutzung zur Verbesserung
-                    unseres Angebots.
-                  </div>
+                  <div className={styles.catDesc}>Anonymisierte Auswertung zur Verbesserung unseres Angebots.</div>
                 </div>
                 <label className={styles.toggle}>
-                  <input
-                    type="checkbox"
-                    checked={analytics}
-                    onChange={(e) => setAnalytics(e.target.checked)}
-                  />
+                  <input type="checkbox" checked={analytics} onChange={(e) => setAnalytics(e.target.checked)} />
                   <span className={styles.toggleSlider} />
                 </label>
               </div>
-
-              {/* Marketing */}
               <div className={styles.category}>
                 <div className={styles.catInfo}>
                   <div className={styles.catName}>Marketing</div>
-                  <div className={styles.catDesc}>
-                    Werden verwendet, um relevante Inhalte und Kampagnen
-                    anzuzeigen.
-                  </div>
+                  <div className={styles.catDesc}>Für relevante Inhalte und Kampagnen.</div>
                 </div>
                 <label className={styles.toggle}>
-                  <input
-                    type="checkbox"
-                    checked={marketing}
-                    onChange={(e) => setMarketing(e.target.checked)}
-                  />
+                  <input type="checkbox" checked={marketing} onChange={(e) => setMarketing(e.target.checked)} />
                   <span className={styles.toggleSlider} />
                 </label>
               </div>
             </div>
 
             <div className={styles.modalButtons}>
-              <button className={styles.modalBtnReject} onClick={rejectAll}>
-                Alles ablehnen
-              </button>
-              <button className={styles.modalBtnSave} onClick={saveCustom}>
-                Auswahl speichern
-              </button>
-              <button className={styles.modalBtnAccept} onClick={acceptAll}>
-                Alles annehmen
-              </button>
+              <button className={styles.modalBtnAccept} onClick={acceptAll}>Alles annehmen</button>
+              <button className={styles.modalBtnSave} onClick={saveCustom}>Auswahl speichern</button>
+              <button className={styles.modalBtnReject} onClick={rejectAll}>Alles ablehnen</button>
             </div>
           </div>
         </div>
