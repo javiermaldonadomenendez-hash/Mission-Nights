@@ -1,3 +1,5 @@
+import { CURRENT_EVENT } from '@/lib/event-config'
+
 export default function CTA() {
   return (
     <section className="cta-section">
@@ -13,7 +15,7 @@ export default function CTA() {
           Der nächste Abend gehört dir.
         </p>
         <a
-          href="https://www.eventbrite.de/e/1986539917369?aff=oddtdtcreator"
+          href={CURRENT_EVENT.eventbriteUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-dark btn-lg reveal d2"
@@ -21,7 +23,7 @@ export default function CTA() {
           Platz sichern
         </a>
         <span className="cta-note reveal d3">
-          Nächste Mission Night · 21. April 2026 · Restaurant Thema, Mülheim an der Ruhr
+          Nächste Mission Night · {CURRENT_EVENT.date} · {CURRENT_EVENT.location}
         </span>
       </div>
     </section>

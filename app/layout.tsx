@@ -3,6 +3,7 @@ import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import CookieConsent from '@/components/CookieConsent/CookieConsent'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import NewsletterPopup from '@/components/NewsletterPopup/NewsletterPopup'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     template: '%s | Mission Nights',
   },
   description:
-    'Mission Nights: Exklusive Networking-Events für Unternehmer & Gründer in NRW. Nächster Termin: 21. April 2026, Mülheim an der Ruhr. Jetzt Platz sichern.',
+    'Mission Nights: Exklusive Networking-Events für Unternehmer & Gründer in NRW. Nächster Termin: 19. Mai 2026, Oberhausen. Jetzt Platz sichern.',
   robots: { index: true, follow: true },
   icons: {
     icon: [
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     siteName: 'Mission Nights',
     title: 'Mission Nights – Exklusive Networking-Events für Unternehmer',
     description:
-      'Mission Nights: Exklusive Networking-Events für Unternehmer & Gründer in NRW. Nächster Termin: 21. April 2026, Mülheim an der Ruhr. Jetzt Platz sichern.',
+      'Mission Nights: Exklusive Networking-Events für Unternehmer & Gründer in NRW. Nächster Termin: 19. Mai 2026, Oberhausen. Jetzt Platz sichern.',
     images: [
       {
         url: '/og-image.jpg',
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mission Nights – Exklusive Networking-Events für Unternehmer',
     description:
-      'Mission Nights: Exklusive Networking-Events für Unternehmer & Gründer in NRW. Nächster Termin: 21. April 2026.',
+      'Mission Nights: Exklusive Networking-Events für Unternehmer & Gründer in NRW. Nächster Termin: 19. Mai 2026, Oberhausen.',
     images: ['/og-image.jpg'],
   },
   alternates: {
@@ -95,6 +96,7 @@ export default function RootLayout({
         {children}
         <CookieConsent />
         <WhatsAppButton />
+        <NewsletterPopup />
       </body>
     </html>
   )

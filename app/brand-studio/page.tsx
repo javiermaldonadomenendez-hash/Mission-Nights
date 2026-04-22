@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollRevealInit from '@/components/ScrollRevealInit'
+import BrandCheck from '@/components/BrandCheck/BrandCheck'
 
 export const metadata: Metadata = {
   title: 'Brand Studio – Mission Nights Brand Studio',
@@ -241,7 +242,10 @@ export default function BrandStudioPage() {
         </div>
       </section>
 
-      {/* ── 10. CTA ─────────────────────────────────────────── */}
+      {/* ── 10. BRAND CHECK ─────────────────────────────────── */}
+      <BrandCheck />
+
+      {/* ── 11. CTA ─────────────────────────────────────────── */}
       <section className="bs-cta" id="kontakt">
         <div className="container">
           <div className="bs-cta-inner reveal">

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { CURRENT_EVENT } from '@/lib/event-config'
 
 export default function NextEvent() {
   return (
@@ -15,18 +16,18 @@ export default function NextEvent() {
           <div className="event-visual">
             <Image
               src="https://assets.mission-nights.de/kunden/mission-nights/images/mnvision9.webp"
-              alt="Mission Nights Vision Dinner"
+              alt="Mission Nights Dress to Close"
               fill
               sizes="(max-width: 768px) 100vw, 400px"
               style={{ objectFit: 'cover', objectPosition: 'center center', zIndex: 0 }}
             />
             <div className="ev-date">
-              <span className="ev-day">21</span>
-              <span className="ev-month">April 2026</span>
+              <span className="ev-day">{CURRENT_EVENT.day}</span>
+              <span className="ev-month">{CURRENT_EVENT.month}</span>
             </div>
             <div className="ev-badge">
               <span className="ev-dot" />
-              Vision Dinner
+              {CURRENT_EVENT.name}
             </div>
           </div>
 
@@ -34,52 +35,34 @@ export default function NextEvent() {
           <div className="event-details">
             <div>
               <span className="ev-theme-tag">Der Abend</span>
-              <div className="ev-theme">
-                Verbindungen, die bleiben —
-                <br />
-                Netzwerken auf einem anderen Level.
-              </div>
+              <div className="ev-theme">{CURRENT_EVENT.theme}</div>
 
               <ul className="ev-meta">
                 <li>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
                     <circle cx="12" cy="9" r="2.5" />
                   </svg>
-                  Restaurant Thema, Ruhrstraße 26, Mülheim an der Ruhr
+                  {CURRENT_EVENT.location}
                 </li>
                 <li>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="12 6 12 12 16 14" />
                   </svg>
-                  Ab 19:30 Uhr
+                  {CURRENT_EVENT.time}
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                  {CURRENT_EVENT.guest}
                 </li>
               </ul>
 
               <div className="ev-spots">
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
                 Limitierte Plätze — sichere dir deinen jetzt
@@ -87,7 +70,7 @@ export default function NextEvent() {
             </div>
 
             <a
-              href="https://www.eventbrite.de/e/1986539917369?aff=oddtdtcreator"
+              href={CURRENT_EVENT.eventbriteUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-dark btn-md"
