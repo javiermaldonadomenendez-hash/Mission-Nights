@@ -117,6 +117,17 @@ export default function Impressum() {
             </div>
 
             <div className="legal-section">
+              <h2>Bildnachweise</h2>
+              <p>
+                Einige auf dieser Website verwendete Bilder stammen von{' '}
+                <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>{' '}
+                (unsplash.com) und werden gemäß der{' '}
+                <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash-Lizenz</a>{' '}
+                genutzt. Die Urheberrechte der jeweiligen Fotografen bleiben davon unberührt.
+              </p>
+            </div>
+
+            <div className="legal-section">
               <h2>Urheberrecht</h2>
               <p>
                 Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
