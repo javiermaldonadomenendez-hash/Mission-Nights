@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { CURRENT_EVENT } from '@/lib/event-config'
 
 export default function NextEvent() {
@@ -12,9 +13,14 @@ export default function NextEvent() {
 
         <div className="event-card reveal">
           {/* Visual side */}
-          <div className="event-visual" style={{
-            background: 'linear-gradient(160deg, #1a1625 0%, #0e1a2e 40%, #0a0a0a 100%)',
-          }}>
+          <div className="event-visual">
+            <Image
+              src="https://assets.mission-nights.de/kunden/mission-nights/images/stoff.webp"
+              alt="Mission Nights Dress to Close"
+              fill
+              sizes="(max-width: 768px) 100vw, 400px"
+              style={{ objectFit: 'cover', objectPosition: 'center center', zIndex: 0 }}
+            />
             <div className="ev-date">
               <span className="ev-day">{CURRENT_EVENT.day}</span>
               <span className="ev-month">{CURRENT_EVENT.month}</span>
