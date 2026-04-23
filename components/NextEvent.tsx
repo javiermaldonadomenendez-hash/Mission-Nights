@@ -15,7 +15,7 @@ export default function NextEvent() {
           {/* Visual side */}
           <div className="event-visual">
             <Image
-              src="https://assets.mission-nights.de/kunden/mission-nights/images/stoff.webp"
+              src="https://assets.mission-nights.de/kunden/mission-nights/images/stoff.webp?v=1"
               alt="Mission Nights Dress to Close"
               fill
               sizes="(max-width: 768px) 100vw, 400px"
